@@ -1,0 +1,13 @@
+.imagen_personaje{
+    width: 150px;
+    height: 130px;
+    border-style: solid;
+    border-color: rgb(194, 143, 76);
+    border-width: 1px;
+}
+#contenedor_personajes{
+	border-color: rgb(192, 192, 192);
+	border-style: dashed;
+	border-width: 1px;
+	margin: 10px;
+}
