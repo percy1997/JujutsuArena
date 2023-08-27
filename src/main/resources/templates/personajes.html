@@ -16,14 +16,15 @@
 		<div>
 			<h1>PERSONAJES</h2>
 		</div>
-		<div id="contenedor_personajes" th:each="character:${personajes}" class="row p-2">
+		<div id="contenedor_personajes" th:each="character:${personajes}" class="row pt-2 pb-2">
 			<div class="col-md-1">
-				<img class="imagen_personaje btn" th:src="${character.imagenPersonaje}" alt="imagen personaje">
+				<button class="btn p-0 btn-imagen-personaje" th:value="${character.codigoPersonaje}">
+				<img class="imagen_personaje" th:src="${character.imagenPersonaje}">				
+				</button>
 			</div>
 			<div class="col-md-11">
-				<input type="hidden" th:value="character.codigoPersonaje" name="codigoPersonaje" id="codigoPersonaje">
-				<h2 th:text="${character.nombrePersonaje}"></h2>
-				<p th:text="${character.descripcionPersonaje}"></p>
+				<h2 class="pl-2" th:text="${character.nombrePersonaje}"></h2>
+				<p class="pl-2" th:text="${character.descripcionPersonaje}"></p>
 			</div>
 		</div>
 	</div>
@@ -32,11 +33,14 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
 		integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
 		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
 
 	<script>
-		$(document).on("click", ".imagen_personaje", function () {
+		//obtener el codigo de un PERSONAJE
+		$(document).on("click", ".btn-imagen-personaje", function () {
 			let cod;
-			cod = $("#codigoPersonaje").val();
+			cod = $(this).val();
 			console.log(cod);
 		})
 	</script>
