@@ -35,5 +35,4 @@ public class Habilidades {
 	@JoinColumn(name="cod_per")
 	private Personaje personaje;
 	
-	
 }
