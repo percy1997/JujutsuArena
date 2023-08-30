@@ -14,7 +14,7 @@
     <div class="container-fluid">
         <div class="div_prueba">
             <div class="row p-2 m-2">
-                <h1>PERSONAJES</h2>
+                <h1>PERSONAJE</h2>
             </div>
             <div class="row p-2" th:each="character:${personajeSeleccionado}">
                 <div class="col-md-1">
@@ -26,108 +26,19 @@
                     </p>
                 </div>
             </div>
-            <div class="div_prueba row">
-                <div class="div_prueba row col-md-6 p-4">
+            <div class="row" th:each="hability:${habilidades}">
+                <div class="row col-md-6 p-4">
                     <div class="row">
                         <div class="col-md-12">
-                            <h2>nombre personaje</h2>
+                            <h2 th:text="${hability.nombreHabilidad}"></h2>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-2">
-                            <img class="imagen_personaje" src="https://i.imgur.com/H47Iwrw.png" alt="imagen personaje">
+                            <img class="imagen_personaje" th:src="${hability.imagenHabilidad}" alt="imagen personaje">
                         </div>
                         <div class="col-md-10">
-                            <p>personaje personaje personaje personaje personaje personaje personaje personaje personaje
-                                personaje
-                                personaje personaje personaje personaje personaje personaje personaje personaje
-                                personaje
-                                personaje
-                                personaje personaje personaje personaje personaje personaje personaje personaje
-                                personaje
-                                personaje
-                                personaje personaje personaje personaje personaje personaje personaje personaje
-                                personaje
-                                personaje.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="div_prueba row col-md-6 p-4">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h2>nombre personaje</h2>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-2">
-                            <img class="imagen_personaje" src="https://i.imgur.com/H47Iwrw.png" alt="imagen personaje">
-                        </div>
-                        <div class="col-md-10">
-                            <p>personaje personaje personaje personaje personaje personaje personaje personaje personaje
-                                personaje
-                                personaje personaje personaje personaje personaje personaje personaje personaje
-                                personaje
-                                personaje
-                                personaje personaje personaje personaje personaje personaje personaje personaje
-                                personaje
-                                personaje
-                                personaje personaje personaje personaje personaje personaje personaje personaje
-                                personaje
-                                personaje.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="div_prueba row col-md-6 p-4">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h2>nombre personaje</h2>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-2">
-                            <img class="imagen_personaje" src="https://i.imgur.com/H47Iwrw.png" alt="imagen personaje">
-                        </div>
-                        <div class="col-md-10">
-                            <p>personaje personaje personaje personaje personaje personaje personaje personaje personaje
-                                personaje
-                                personaje personaje personaje personaje personaje personaje personaje personaje
-                                personaje
-                                personaje
-                                personaje personaje personaje personaje personaje personaje personaje personaje
-                                personaje
-                                personaje
-                                personaje personaje personaje personaje personaje personaje personaje personaje
-                                personaje
-                                personaje.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="div_prueba row col-md-6 p-4">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h2>nombre personaje</h2>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-2">
-                            <img class="imagen_personaje" src="https://i.imgur.com/H47Iwrw.png" alt="imagen personaje">
-                        </div>
-                        <div class="col-md-10">
-                            <p>personaje personaje personaje personaje personaje personaje personaje personaje personaje
-                                personaje
-                                personaje personaje personaje personaje personaje personaje personaje personaje
-                                personaje
-                                personaje
-                                personaje personaje personaje personaje personaje personaje personaje personaje
-                                personaje
-                                personaje
-                                personaje personaje personaje personaje personaje personaje personaje personaje
-                                personaje
-                                personaje.
-                            </p>
+                            <p th:text="${hability.descripcionHabilidad}"></p>
                         </div>
                     </div>
                 </div>
