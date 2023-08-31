@@ -12,6 +12,21 @@ public class PersonajeServices {
 	@Autowired
 	private PersonajeRepository repo;
 	
+	//registrar PERSONAJE
+	public void registrarPersonaje(Personaje p) {
+		repo.save(p);
+	}
+	
+	//actualizar PERSONAJE
+	public void actualizarPersonaje(Personaje p) {
+		repo.save(p);	
+	}
+	
+	//eliminar PERSONAJE
+	public void eliminarPersonaje(int cod) {
+		repo.deleteById(cod);
+	}
+	
 	//listar
 	public List<Personaje> listaPersonajes(){
 		return repo.findAll();

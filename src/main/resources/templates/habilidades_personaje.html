@@ -24,8 +24,10 @@
 					<h2 th:text="${character.nombrePersonaje}"></h2>
 					<p th:text="${character.descripcionPersonaje}">
 					</p>
-				</div>
+				</div>	
 			</div>
+			
+			<!-- Lista de habilidades por personaje -->
 			<div class="row p-2">
 				<div class="row col-md-6"  th:each="hability:${habilidades}">
 					<div class="row">
@@ -43,8 +45,11 @@
 					</div>
 				</div>
 			</div>
+			<!-- FIN Lista de habilidades por personaje -->
+			
 		</div>
 	</div>
+
 
 </body>
 

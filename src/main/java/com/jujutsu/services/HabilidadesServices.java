@@ -14,8 +14,24 @@ public class HabilidadesServices {
 	@Autowired
 	private HabilidadesRepository repo;
 	
+	//listar HABILIDADES por codigo de PERSONAJE seleccionado
 	public List<Habilidades> listarHabilidadesPorPersonaje(Integer cod){
 		return repo.habilidadesPorPersonaje(cod);
+	}
+	
+	//registrar HABILIDADES
+	public void registrarHabilidades(Habilidades h) {
+		repo.save(h);
+	}
+	
+	//actualizar HABILIDADES
+	public void actualizarHabilidades(Habilidades h) {
+		repo.save(h);
+	}
+	
+	//eliminar HABILIDADES
+	public void eliminarHabilidades(int cod) {
+		repo.deleteById(cod);
 	}
 
 }

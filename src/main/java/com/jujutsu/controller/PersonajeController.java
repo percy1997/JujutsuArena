@@ -27,16 +27,8 @@ public class PersonajeController {
 		return "personajes";
 	}
 	
-	//obtener JSON de PERSONAJE
-	@RequestMapping("/personajePorCodigo")
-	public String buscarPersonajePorCodigo(@RequestParam("codigoPersonaje")Integer codigo, int cod) {
-		perSer.buscarPersonajePorCodigo(codigo);
-		return "redirect:/habilidades_personaje?cod=" + cod;
-	}
-
-	//mostrar habilidades por personaje
-	@RequestMapping("/habilidadesPorPersonaje")
-	public String habilidadesPorPersonaje(@RequestParam("codigoPersonaje")Integer codigo,Model model) {
+	@RequestMapping("/habilidades")
+	public String habilidades(@RequestParam("codigo-personaje")Integer codigo,Model model) {
 		model.addAttribute("personajeSeleccionado",perSer.buscarPersonajePorCodigo(codigo));
 		model.addAttribute("habilidades", habSer.listarHabilidadesPorPersonaje(codigo));
 		return "habilidades_personaje";
