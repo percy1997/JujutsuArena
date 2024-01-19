@@ -1,18 +1,146 @@
-.imagen_personaje{
-    width: 150px;
-    height: 130px;
-    border-style: solid;
-    border-color: rgb(194, 143, 76);
-    border-width: 1px;
-    /*Invertir una imagen de derecha a izquierda*/
-    /*transform: scaleX(-1);*/
+.imagen_personaje {
+	width: 150px;
+	height: 130px;
+	border-style: solid;
+	border-color: rgb(194, 143, 76);
+	border-width: 1px;
+	/*Invertir una imagen de derecha a izquierda*/
+	/*transform: scaleX(-1);*/
 }
-#contenedor_personajes{
+
+#contenedor_personajes {
 	border-color: rgb(192, 192, 192);
 	border-style: dashed;
 	border-width: 1px;
-	margin: 10px;	
+	margin: 10px;
 }
-#td_imagen{
+
+#td_imagen {
 	width: 120px;
+}
+
+.titulo {
+	text-align: center;
+	background-color: rgb(128, 0, 128);
+	padding: 20px;
+	color: white;
+}
+
+.contenedor {
+	background-color: white;
+}
+
+.contenedorPrincipal {
+	display: flex;
+	justify-content: space-between;
+}
+
+.bloque1 {
+	width: 33.5%;
+
+}
+
+.colorFondo {
+	background-color: rgb(134, 155, 238);
+}
+
+.bloque2 {
+
+	width: 66.5%;
+}
+
+.bloqueSup {
+	display: flex;
+	justify-content: left;
+
+}
+
+.bloqueInf {
+	display: flex;
+
+}
+
+.barraNav,
+.opcionUsuario {
+	width: 15%;
+}
+
+.barraNav {
+	text-align: center;
+}
+
+.imagenVoid,
+.topLadder {
+	width: 15%;
+
+}
+
+.info {
+	width: 32%;
+}
+
+.portada {
+	width: 32%;
+	border-color: black;
+	border-style: solid;
+	border-width: 1px;
+}
+
+.tituloPortada {
+
+	height: 65px;
+	width: 100%;
+}
+
+.imagenPortada {
+	border-color: black;
+	border-style: solid;
+	border-left-width: 0px;
+	border-right-width: 0px;
+	border-bottom-width: 0px;
+	border-top-width: 1px;
+	height: 150px;
+	width: 100%;
+}
+
+.botonInicio {
+	box-shadow: inset 0px -3px 4px -2px rgba(0, 0, 0, 0.3);
+	font-size: 15px;
+	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+	margin-top: 5px;
+	padding-top: 1px;
+	padding-bottom: 1px;
+	height: 28px;
+	width: 180px;
+	background-color: white;
+	border-color: black;
+	border-style: solid;
+	border-width: 2px;
+	border-radius: 8px;
+}
+
+.listaUsuario {
+	list-style-type: none;
+	text-align: left;
+}	
+
+.bloqueUsuario {
+	padding: 8px;
+	border-width:1px;
+	border-color: black;
+	border-style: solid;
+	background-color: rgb(128, 0, 128);
+	margin-right: 10px;
+
+}
+
+.letraBlanca {
+	color: white;
+}
+.titulosBloqueUsuario{
+	font-size: 15px !important; 
+	font-style: oblique !important;
+}
+.palabrasBloqueUsuario{
+	font-size: 12px;
 }

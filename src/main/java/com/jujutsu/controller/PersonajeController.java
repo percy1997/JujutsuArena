@@ -24,7 +24,7 @@ public class PersonajeController {
 	@RequestMapping("")
 	public String personajes(Model model) {
 		model.addAttribute("personajes",perSer.listaPersonajes());
-		return "/usuario/personajes";
+		return "usuario/personajes";
 	}
 	
 	@RequestMapping("/habilidades")
@@ -39,6 +39,5 @@ public class PersonajeController {
 		model.addAttribute("personajes",perSer.listaPersonajes());
 		return "/administrador/listaPersonajes";
 	}	
-
 
 }
