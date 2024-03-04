@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+		integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+	<link rel="stylesheet" href="/css/style.css">
+	<title>Jujutsu Arena</title>
+</head>
+
+<body>
+
+	<div class="globalContainer">
+		<div class="advertisingContainer backgroundColor">
+			<div class="advertising">
+			</div>
+		</div>
+
+		<div class="mainContainer">
+
+			<div th:insert="~{plantilla/template :: bloqueSuperior}"></div>
+
+			<div class="bottomBlock">
+				<div th:insert="~{plantilla/template :: bloqueInferiorLateral}" class="userBlock backgroundColor"></div>
+
+				<div class="mainBlockManual">
+					<div class="mainBlockContent">
+						<h1 class="titleMainBlock">Characters and Skills</h1>
+						<div class="fontManualSize">
+							<a class="fontManual" th:href="@{/}">Jujutsu-Arena</a> >
+							<a class="fontManual" th:href="@{/manual}">Game manual</a> >
+							<h1 class="routes subTitleMainBlock">
+								Characters and Skills</h1>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<div class="descriptionManual fontManual">
+								Jujutsu-Arena forces you to select 3 characters when you start a new game. This page
+								gives you an overview of all characters available in the Jujutsu-Arena game. Not only
+								can
+								you view each character's skills, you can also discuss the characters by posting
+								comments.
+							</div>
+							<br>
+							<div class="containerManualOptions">
+
+								<div class="manualOptions">
+									<div th:each="fila:${personajes}" class="manualOption">
+										<div class="manualOptionTop">
+											<h2 th:text="${fila.nombrePersonaje}" class="titleManualOptions"></h2>
+										</div>
+										<div class="manualOptionBottom">
+											<div class="manualOptionDiv">
+												<div class="contentCharacter">
+													<img th:src="${fila.imagenPersonaje}" width="46px" height="46px"
+														class="imageCharacter">
+													<p th:text="${fila.descripcionPersonaje}"
+														class="descriptionCharacter">
+													</p>
+													<a id="detailsCharacter" class="linkManualOptions"
+														th:text="'Read more about ' + ${fila.nombrePersonaje}"
+														th:href="@{'/chars/' + ${fila.codigoPersonaje}}"></a>
+
+												</div>
+											</div>
+										</div>
+									</div>
+									<!--										<div class="manualOption">
+										<div class="manualOptionTop">
+											<h2 class="titleManualOptions">Prueba</h2>
+										</div>
+										<div class="manualOptionBottom">
+											<div class="manualOptionDiv">
+												<div class="contentCharacter">
+													<img src="https://i.ibb.co/XZVRN7h/sukuna-itadori.png" width="46px"
+														height="46px" class="imageCharacter">
+													<p class="descriptionCharacter">
+														Fukasaku and Shima (S) are known as the two great sage toads of
+														Mount Myoboku. They taught both Jiraiya and Naruto sage jutsu
+														and are each skilled in elemental techniques as well as genjutsu
+														techniques.
+													</p>
+													<a id="detailsCharacter" class="linkManualOptions"></a>
+
+												</div>
+											</div>
+										</div>
+									</div>
+									-->
+									<!--						<div class="manualOption">
+										<div class="manualOptionTop">
+											<h2 class="titleManualOptions">Prueba</h2>
+										</div>
+										<div class="manualOptionBottom">
+											<div class="manualOptionDiv">
+												<div class="contentCharacter">
+													<img src="https://i.ibb.co/xMtB4mY/2.png" width="46px" height="46px"
+														class="imageCharacter">
+													<p class="descriptionCharacter">
+														Fukasaku and Shima (S) are known as the two great sage toads of
+														Mount Myoboku. They taught both Jiraiya and Naruto sage jutsu
+														and are each skilled in elemental techniques as well as genjutsu
+														techniques.
+													</p>
+													<a id="detailsCharacter" class="linkManualOptions"></a>
+
+												</div>
+											</div>
+										</div>
+									</div>
+									-->
+
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+
+		</div>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
+			integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
+			crossorigin="anonymous"></script>
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+		<script>
+			var imagenes = [
+				'https://i.imgur.com/k8Qtlyf.png',
+				'https://i.imgur.com/6eZjAou.png',
+				'https://i.imgur.com/2QYFEKQ.png',
+				'https://i.imgur.com/7KNafXw.png',
+				'https://i.imgur.com/M1XgdJe.png',
+				'https://i.imgur.com/yywbOxd.png',
+				'https://i.imgur.com/b1C8bqq.png',
+			];
+			// Array para llevar el seguimiento de las imágenes mostradas
+			var imagenesMostradas = [];
+
+			// Función para obtener una imagen aleatoria que no se haya mostrado
+			function obtenerImagenAleatoria() {
+				if (imagenesMostradas.length === 0) {
+					// Si todas las imágenes se han mostrado al menos una vez, reiniciar el array de imágenes mostradas
+					imagenesMostradas = [...imagenes];
+				}
+
+				var indiceAleatorio = Math.floor(Math.random() * imagenesMostradas.length);
+				var imagenAleatoria = imagenesMostradas.splice(indiceAleatorio, 1)[0];
+
+				return imagenAleatoria;
+			}
+
+			// Obtén la referencia a la etiqueta de imagen
+			var imgElement = document.getElementById('imagenAleatoria');
+
+			// Establece la fuente de la imagen al cargar la página
+			window.onload = function () {
+				imgElement.src = obtenerImagenAleatoria();
+			};
+		</script>
+
+</body>
+
+</html>

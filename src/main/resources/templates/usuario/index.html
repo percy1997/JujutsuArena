@@ -14,92 +14,208 @@
 
 	<div class="globalContainer">
 		<div class="advertisingContainer backgroundColor">
-			aqui ira la publicidad
-		</div>
-		<div class="mainContainer">
-			<div class="topBlock">
-				<div class="navbarBlock backgroundColor">
-					<div class="navigationButtons">
-						<a class="botonInicio btn btn-white" th:href="@{/}">STARPAGE</a>
-						<a class="botonInicio btn btn-white">START PLAYING</a>
-						<a class="botonInicio btn btn-white">GAME MANUAL</a>
-						<a class="botonInicio btn btn-white">LADDERS</a>
-						<a class="botonInicio btn btn-white">MISSIONS</a>
-
-					</div>
-					<div class="imageNavbar">
-						aqui ira la imagen
-					</div>
-				</div>
-				<div class="frontPageBlock">
-					<div class="tituloPortada">
-						<img style="width: 100%; height: 100%;" src="https://i.imgur.com/DcnexpS.png">
-					</div>
-					<div class="imagenPortada">
-						<img style="width: 100%; height: 100%;" id="imagenAleatoria" src="">
-					</div>
-				</div>
+			<div class="advertising">
 			</div>
+		</div>
 
+		<div class="mainContainer">
+
+			<div th:insert="~{plantilla/template :: bloqueSuperior}"></div>
 
 			<div class="bottomBlock">
-				<div class="opcionUsuario colorFondo">
+				<div th:insert="~{plantilla/template :: bloqueInferiorLateral}" class="userBlock backgroundColor"></div>
+				<div class="userBlock backgroundColor">
 					<div class="bloqueUsuario letraBlanca palabrasBloqueUsuario">
 						<div class="bloqueUsuario1">
-							<h5><u class="titulosBloqueUsuario">Jujutsu-Boards</u></h5>
-							The official forum of<br>
-							<a class="letraBlanca" href="">Jujutsu-Arena.site</a><br>
-							<i class="palabrasBloqueUsuario">is not yet available.</i>
-						</div>
-						<br>
+							<h5><u class="titulosBloqueUsuario">Random Screenshot</u></h5>
+							<img class="randomScreenshot" src="https://i.ibb.co/ZmpdL9n/random-screen2.png">
+							<br>
+							<br>
+							<h5><u class="titulosBloqueUsuario">First time playing?</u></h5>
+							<p>
+								Note: If this is your first time playing, be sure to check
+								out the The Basics before you start battling.
+							</p>
+							<h5><u class="titulosBloqueUsuario">Top 10 Most Wins</u></h5>
+							<ol class="ordenedList">
+								<li class="listItem"><a class="letraBlanca" href><u>Percyval</u></a>
+									<spa> +450</spa>
+									<spa> wins</spa>
+								</li>
+								<li class="listItem"><a class="letraBlanca" href><u>Player2</u></a>
+									<spa> +359</spa>
+									<spa> wins</spa>
+								</li>
+								<li class="listItem"><a class="letraBlanca" href><u>JugadorNormal</u></a>
+									<spa> +347</spa>
+									<spa> wins</spa>
+								</li>
+								<li class="listItem"><a class="letraBlanca" href><u>Raziel</u></a>
+									<spa> +298</spa>
+									<spa> wins</spa>
+								</li>
+								<li class="listItem"><a class="letraBlanca" href><u>hajeff</u></a>
+									<spa> +296</spa>
+									<spa> wins</spa>
+								</li>
+								<li class="listItem"><a class="letraBlanca" href><u>jockey</u></a>
+									<spa> +287</spa>
+									<spa> wins</spa>
+								</li>
+								<li class="listItem"><a class="letraBlanca" href><u>asddas</u></a>
+									<spa> +275</spa>
+									<spa> wins</spa>
+								</li>
+								<li class="listItem"><a class="letraBlanca" href><u>play4fun</u></a>
+									<spa> +221</spa>
+									<spa> wins</spa>
+								</li>
+								<li class="listItem"><a class="letraBlanca" href><u>LegendBr</u></a>
+									<spa> +203</spa>
+									<spa> wins</spa>
+								</li>
+								<li class="listItem"><a class="letraBlanca" href><u>Biel</u></a>
+									<spa> +171</spa>
+									<spa> wins</spa>
+								</li>
 
-						<h5 class="titulosBloqueUsuario"><u>Account</u></h5><span>Welcome, </span><b>Usuario</b><br>
-						<a class="letraBlanca" href><b><u class="palabrasBloqueUsuario">View Profile</u></b></a><br>
-						<a class="letraBlanca" href><b><u class="palabrasBloqueUsuario">Control
-									Panel</u></b></a><br>
-						<a class="letraBlanca" href><b><u class="palabrasBloqueUsuario">Change title
-									(NEW)</u></b></a><br>
-						<a class="letraBlanca" href><b><u class="palabrasBloqueUsuario">Change
-									Avatar</u></b></a><br>
-						<a class="letraBlanca" href><b><u class="palabrasBloqueUsuario">Clan Panel</u></b></a><br>
-						<a class="letraBlanca" href><b><u class="palabrasBloqueUsuario">Custom
-									Background</u></b></a><br>
-						<a class="letraBlanca" href><b><u class="palabrasBloqueUsuario">Reset
-									account</u></b></a><br>
-						<a class="letraBlanca" href><b><u class="palabrasBloqueUsuario">Logout</u></b></a>
+							</ol>
+							<h5><u class="titulosBloqueUsuario">Top 10 Winstreak</u></h5>
+							<ol class="ordenedList">
+								<li class="listItem"><a class="letraBlanca" href><u>Percyval</u></a>
+									<spa> +78</spa>
+									<spa> streak</spa>
+								</li>
+								<li class="listItem"><a class="letraBlanca" href><u>Sasuu</u></a>
+									<spa> +71</spa>
+									<spa> streak</spa>
+								</li>
+								<li class="listItem"><a class="letraBlanca" href><u>Itadori2000</u></a>
+									<spa> +67</spa>
+									<spa> streak</spa>
+								</li>
+								<li class="listItem"><a class="letraBlanca" href><u>hajeff</u></a>
+									<spa> +64</spa>
+									<spa> streak</spa>
+								</li>
+								<li class="listItem"><a class="letraBlanca" href><u>Raziel</u></a>
+									<spa> +63</spa>
+									<spa> streak</spa>
+								</li>
+								<li class="listItem"><a class="letraBlanca" href><u>play4fun</u></a>
+									<spa> +57</spa>
+									<spa> streak</spa>
+								</li>
+								<li class="listItem"><a class="letraBlanca" href><u>JugadorNormal</u></a>
+									<spa> +51</spa>
+									<spa> streak</spa>
+								</li>
+								<li class="listItem"><a class="letraBlanca" href><u>Krull</u></a>
+									<spa> +49</spa>
+									<spa> streak</spa>
+								</li>
+								<li class="listItem"><a class="letraBlanca" href><u>Turza</u></a>
+									<spa> +48</spa>
+									<spa> streak</spa>
+								</li>
+								<li class="listItem"><a class="letraBlanca" href><u>W3C</u></a>
+									<spa> +37</spa>
+									<spa> streak</spa>
+								</li>
+							</ol>
+							<h5><u class="titulosBloqueUsuario">Version info</u></h5>
+							Version OFFICIAL 0.1.1
+						</div>
+
+
 
 					</div>
-
 				</div>
-				<div class="topLadder colorFondo">
-					<div class="bloqueUsuario letraBlanca palabrasBloqueUsuario">
-						<div class="bloqueUsuario1">
-							<h5><u class="titulosBloqueUsuario">Jujutsu-Boards</u></h5>
-							The official forum of<br>
-							<a class="letraBlanca" href="">Jujutsu-Arena.site</a><br>
-							<i class="palabrasBloqueUsuario">is not yet available.</i>
+				<div class="mainBlock">
+					<div class="mainBlockContent">
+						<h1 class="titleMainBlock">Jujutsu Arena</h1>
+						<h1 class="subTitleMainBlock">Your #1 Jujutsu Kaisen Online Multiplayer Game</h1>
+
+						<div class="notice">
+							<h1 class="noticeTitle">Balance 0.1.1</h1>
+							<h2 class="dateNotice">>> Sabado, Febrero 17, 2024 22:41 by Percyval</h2>
+							</h2>
+							<p class="greeting">
+								Hola jugadores, nos complace anunciar que el index de la página esta completa
+								en un 50%, ya no falta mucho para acabar con esta parte.
+							</p>
+							<p class="additional">
+								Adicionalmente, los primeros personajes estan próximos a estrenarse, atentos para
+								mas noticias.
+							</p>
+							<h2 class="separator">
+								.............................................................................................................................................
 						</div>
-						<br>
 
-						<h5 class="titulosBloqueUsuario"><u>Account</u></h5><span>Welcome, </span><b>Usuario</b><br>
-						<a class="letraBlanca" href><b><u class="palabrasBloqueUsuario">View Profile</u></b></a><br>
-						<a class="letraBlanca" href><b><u class="palabrasBloqueUsuario">Control
-									Panel</u></b></a><br>
-						<a class="letraBlanca" href><b><u class="palabrasBloqueUsuario">Change title
-									(NEW)</u></b></a><br>
-						<a class="letraBlanca" href><b><u class="palabrasBloqueUsuario">Change
-									Avatar</u></b></a><br>
-						<a class="letraBlanca" href><b><u class="palabrasBloqueUsuario">Clan Panel</u></b></a><br>
-						<a class="letraBlanca" href><b><u class="palabrasBloqueUsuario">Custom
-									Background</u></b></a><br>
-						<a class="letraBlanca" href><b><u class="palabrasBloqueUsuario">Reset
-									account</u></b></a><br>
-						<a class="letraBlanca" href><b><u class="palabrasBloqueUsuario">Logout</u></b></a>
+						<div class="notice">
+							<h1 class="noticeTitle">Balance 0.1.1</h1>
+							<h2 class="dateNotice">>> Sabado, Febrero 17, 2024 22:41 by Percyval</h2>
+							</h2>
+							<p class="greeting">
+								Hola jugadores, nos complace anunciar que el index de la página esta completa
+								en un 50%, ya no falta mucho para acabar con esta parte.
+							</p>
+							<p class="additional">
+								Adicionalmente, los primeros personajes estan próximos a estrenarse, atentos para
+								mas noticias.
+							</p>
+							<h2 class="separator">
+								.............................................................................................................................................
+						</div>
 
+						<div class="notice">
+							<h1 class="noticeTitle">Balance 0.1.1</h1>
+							<h2 class="dateNotice">>> Sabado, Febrero 17, 2024 22:41 by Percyval</h2>
+							</h2>
+							<p class="greeting">
+								Hola jugadores, nos complace anunciar que el index de la página esta completa
+								en un 50%, ya no falta mucho para acabar con esta parte.
+							</p>
+							<p class="additional">
+								Adicionalmente, los primeros personajes estan próximos a estrenarse, atentos para
+								mas noticias.
+							</p>
+							<h2 class="separator">
+								.............................................................................................................................................
+						</div>
+
+						<div class="notice">
+							<h1 class="noticeTitle">Balance 0.1.1</h1>
+							<h2 class="dateNotice">>> Sabado, Febrero 17, 2024 22:41 by Percyval</h2>
+							</h2>
+							<p class="greeting">
+								Hola jugadores, nos complace anunciar que el index de la página esta completa
+								en un 50%, ya no falta mucho para acabar con esta parte.
+							</p>
+							<p class="additional">
+								Adicionalmente, los primeros personajes estan próximos a estrenarse, atentos para
+								mas noticias.
+							</p>
+							<h2 class="separator">
+								.............................................................................................................................................
+						</div>
+
+						<div class="notice">
+							<h1 class="noticeTitle">Balance 0.1.1</h1>
+							<h2 class="dateNotice">>> Sabado, Febrero 17, 2024 22:41 by Percyval</h2>
+							</h2>
+							<p class="greeting">
+								Hola jugadores, nos complace anunciar que el index de la página esta completa
+								en un 50%, ya no falta mucho para acabar con esta parte.
+							</p>
+							<p class="additional">
+								Adicionalmente, los primeros personajes estan próximos a estrenarse, atentos para
+								mas noticias.
+							</p>
+							<h2 class="separator">
+								.............................................................................................................................................
+						</div>
 					</div>
-				</div>
-				<div class="info">
-					aqui ira la info
 				</div>
 			</div>
 
