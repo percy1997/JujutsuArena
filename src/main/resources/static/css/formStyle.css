@@ -1,0 +1,64 @@
+.input {
+	background: silver;
+	border: 1px solid #393939;
+	border-radius: 5px 5px 5px 5px;
+	color: #393939;
+	font-size: 15px;
+	padding: 5px;
+	height: 30px;
+}	
+
+.textarea, .textareaImg {
+	background: silver;
+	border: 1px solid #393939;
+	border-radius: 5px 5px 5px 5px;
+	color: #393939;
+	font-size: 15px;
+	padding: 5px;
+	height: 147px;
+}
+
+.textareaImg{
+	width: 250px;
+}
+
+.label {
+	font-size: 15px;
+	margin-bottom: 3px;
+}
+
+.divForm {
+	margin-top: 15px;
+	display: flex;
+	flex-direction: column;
+	align-items: normal
+}
+
+.imgInput{
+	margin-top: 15px;
+	display: flex;
+	flex-direction: row;
+	align-items: normal;
+	justify-content: space-between;
+}
+
+.titleForm{
+	text-align: center;
+	font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.formContainer{
+	border-color: rgb(0, 128, 0);
+	border-style: solid;
+	border-width: 1px;
+	display: flex;
+    justify-content: center;
+}
+
+.form{
+	width: 450px;
+	border-color: black;
+	border-style: solid;
+	border-width: 1px;
+	padding: 10px;
+}

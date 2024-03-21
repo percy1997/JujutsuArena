@@ -46,5 +46,8 @@ public class UsuarioController {
 	    return "usuario/skills";
 	}
 	
-
+	@GetMapping("new")
+	public String nuevo() {
+		return "usuario/newCharacter";
+	}
 }
