@@ -36,4 +36,9 @@ public class PersonajeServices {
 	public Personaje buscarPersonajePorCodigo(int cod) {
 		return repo.findById(cod).orElse(null);
 	}
+	
+	//listar PERSONAJES habilitados para estar en vivo
+	public List<Personaje> listarPersonajeHabilitados(){
+		return repo.personajeHabilitados();
+	}
 }

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+		integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/formStyle.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+	<title>Jujutsu Arena</title>
+</head>
+
+<body>
+
+	<div class="globalContainer">
+		<div class="advertisingContainer backgroundColor">
+			<div class="advertising">
+			</div>
+		</div>
+
+		<div class="mainContainer">
+
+			<div th:insert="~{plantilla/template :: bloqueSuperior}"></div>
+
+			<div class="bottomBlock">
+				<div th:insert="~{plantilla/template :: bloqueInferiorLateral}" class="userBlock backgroundColor"></div>
+
+				<div class="mainBlockManual">
+					<div class="mainBlockContent">
+						<h1 class="titleMainBlock">Index</h1>
+						<div class="fontManualSize">
+							<a class="fontManual" th:href="@{/}">Jujutsu-Arena</a> >
+							<h1 class="routes subTitleMainBlock">
+								Index</h1>
+							<br>
+							<br>
+							<br>
+							<div class="formContainer">
+
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+
+		</div>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
+			integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
+			crossorigin="anonymous"></script>
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+		<script>
+			$(document).on("submit", "#formRegistro", function (event) {
+				event.preventDefault();
+
+				var imageInput = document.getElementById("imageInput");
+				var imageUrl = imageInput.value;
+				var img = new Image();
+
+				// Seteamos la fuente de la imagen para activar los eventos onload y onerror
+				img.src = imageUrl;
+
+				// si la imagen se carga correctamente, obtenemos los datos del formulario y los enviamos
+				img.onload = function () {
+					obtenerDatosFormulario();
+				};
+
+				// si ocurre un error al cargar la imagen, cambia el valor del input a la imagen por defecto
+				//y enviamos el formulario con el valor de la imagen cambiada
+				img.onerror = function () {
+					imageInput.value = "https://i.ibb.co/njtxs4g/image.png";
+					// Ahora, obtenemos los datos del formulario y los enviamos
+					obtenerDatosFormulario();
+				};
+
+
+				// Función para obtener los datos del formulario
+				function obtenerDatosFormulario() {
+					var nombre = $("#nombre").val();
+					var descripcion = $("#descripcion").val();
+					var imagen = imageInput.value;
+					var rasgo = $("#rasgo").val();
+					var grado = $("#grado").val();
+
+					var formDataObject = {
+						nombre: nombre,
+						descripcion: descripcion,
+						imagen: imagen,
+						rasgo: rasgo,
+						grado: grado
+					};
+
+					console.log(formDataObject);
+
+					//creamos los elementos de respuesta
+					var segmentoS = $("<div class='alert alert-success text-center mt-3'><h2>Registro correcto</h2></div>");
+					var segmentoD = $("<div class='alert alert-danger text-center mt-3'><h2>Error al registrar</h2></div>");
+
+					//enviamos el objeto 
+					$.ajax({
+						url: "/dev/registrar",
+						type: "POST",
+						data: formDataObject,
+						success: function (response) {
+							if (response === "El registro se realizó correctamente") {
+								$("#formRegistro").append(segmentoS)
+
+							} else {
+								$("#formRegistro").append(segmentoD)
+
+							}
+						},
+						error: function (xhr, status, error) {
+							console.error("Error en la petición AJAX:", error);
+						}
+					});
+
+
+				}
+			});
+		</script>
+
+		<script>
+			// Example starter JavaScript for disabling form submissions if there are invalid fields
+			(function () {
+				'use strict';
+				window.addEventListener('load', function () {
+					// Fetch all the forms we want to apply custom Bootstrap validation styles to
+					var forms = document.getElementsByClassName('needs-validation');
+					// Loop over them and prevent submission
+					var validation = Array.prototype.filter.call(forms, function (form) {
+						form.addEventListener('submit', function (event) {
+							if (form.checkValidity() === false) {
+								event.preventDefault();
+								event.stopPropagation();
+							}
+							form.classList.add('was-validated');
+						}, false);
+					});
+				}, false);
+			})();
+		</script>
+
+		<script>
+			var imgInput = document.getElementById("imageInput")
+			var imagePreview = document.getElementById("imagePreview")
+
+			imgInput.addEventListener('input', () => {
+				//obtenemos el contenido del input cada que ingresamos un nuevo caracter
+				var imgInputValue = document.getElementById("imageInput").value
+				//este valor obtenido lo mandamos al source del elemento img
+				//para que se muestre inmediatamente
+				imagePreview.src = imgInputValue;
+			});
+
+			imagePreview.addEventListener('error', function () {
+				// Si la imagen no se carga por algun error mostrara una imagen por defecto
+				imagePreview.src = 'https://i.ibb.co/njtxs4g/image.png';
+			});
+
+		</script>
+
+		<!--script para las imagenes debajo del titulo-->		
+		<script src="/js/imagenes.js"></script>
+
+
+</body>
+
+</html>
